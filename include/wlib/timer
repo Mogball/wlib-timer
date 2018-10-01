@@ -1,0 +1,6 @@
+#ifndef __WLIB_TIMER__
+#define __WLIB_TIMER__
+
+#include <wlib/emb/Timer.h>
+
+#endif
