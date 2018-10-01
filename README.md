@@ -1,11 +1,25 @@
 # wlib-timer
 
-This is a `wio` package for
-- platform(s): all
-- framework(s): all
+System-independent basic timer library. Defines a `timer`
+type that is used to get time since a base point.
 
-To include this package as a dependency:
+## Usage
 
-```bash
-wio install wlib-timer
+```c++
+static wlp::timer timer;
+
+void setup() {
+    timer.zero(); // base point
+}
+
+void loop() {
+    timer.us() // microseconds
+    timer.ms() // milliseconds
+    timer.sec() // seconds (float)
+}
 ```
+
+## Caveats
+
+On AVR systems `sizeof(time_t) => 4` which means that the max
+time value is about 71 hours.
